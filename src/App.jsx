@@ -28,8 +28,12 @@ function App() {
   return (
     <div className="App">
       <AppHeader />
-      <BurgerConstructor />
-      <BurgerIngredients />
+      <main>
+        {!state.loading && (
+          <BurgerConstructor ingredients={state.ingredients} />
+        )}
+        {!state.loading && <BurgerIngredients />}
+      </main>
       <div id="react-modals"></div>
     </div>
   );
