@@ -5,7 +5,7 @@ function BurgerIngredients(props) {
   const img = "";
   return (
     <>
-      <div className="constructor-elements">
+      <section className="constructor-elements">
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <ConstructorElement
             type="top"
@@ -27,7 +27,7 @@ function BurgerIngredients(props) {
             thumbnail={img}
           />
         </div>
-      </div>
+      </section>
     </>
   );
 }

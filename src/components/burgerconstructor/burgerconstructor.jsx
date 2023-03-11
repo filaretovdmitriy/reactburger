@@ -6,7 +6,7 @@ function BurgerConstructor(props) {
     console.log(props);
   }, []);
   return (
-    <div className="burger-ingredients">
+    <section className="burger-ingredients">
       <h1>Соберите свой бургер</h1>
       <div className="ingredients__tabs" style={{ display: "flex" }}>
         <Tab value="one" active={current === "one"} onClick={setCurrent}>
@@ -43,7 +43,7 @@ function BurgerConstructor(props) {
         <h2>Соусы</h2>
         <h2>Начинки</h2>
       </div>
-    </div>
+    </section>
   );
 }
 
