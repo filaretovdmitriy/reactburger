@@ -62,7 +62,7 @@ main {
 
 .burger-ingredients__categories {
   overflow-y: scroll;
-  max-height: calc(100vh - 296px);
+  max-height: calc(100vh - 396px);
 }
 
 .burger-ingredients__category {
@@ -103,4 +103,15 @@ main {
 
 .burger-ingredients__name {
   text-align: center;
+}
+
+.constructor-elements__total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.constructor-elements__ingredients {
+  max-height: 400px;
+  overflow-y: scroll;
 }
