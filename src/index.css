@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,6 +14,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  text-align: left;
 }
 
 .header {
@@ -40,30 +48,59 @@ main {
   width: 1280px;
   display: flex;
   justify-content: space-around;
-  gap: 40px;
+
   margin: 0 auto;
 }
 
 .burger-ingredients {
+  max-width: 600px;
+}
+
+.constructor-elements {
+  max-width: 600px;
 }
 
 .burger-ingredients__categories {
+  overflow-y: scroll;
+  max-height: calc(100vh - 296px);
 }
 
 .burger-ingredients__category {
 }
 
+.burger-ingredients__category h2 {
+}
+
 .burger-ingredients__items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .burger-ingredients__item {
+  width: 50%;
 }
 
 .burger-ingredients__image {
+  max-height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-ingredients__image img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .burger-ingredients__price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .burger-ingredients__name {
+  text-align: center;
 }
