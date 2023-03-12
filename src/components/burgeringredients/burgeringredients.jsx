@@ -3,98 +3,47 @@ import {
   ConstructorElement,
   CurrencyIcon,
   Button,
+  DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 
 function BurgerIngredients(props) {
-  const img = "";
+  const bun = props.ingredients[0];
+
   return (
     <>
       <section className="constructor-elements pt-25">
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div className="constructor-elements__item pl-6">
           <ConstructorElement
             type="top"
             isLocked={true}
-            text="Краторная булка N-200i (верх)"
-            price={200}
-            thumbnail={img}
+            text={bun.name}
+            price={bun.price}
+            thumbnail={bun.image}
           />
         </div>
-        <div
-          className="constructor-elements__ingredients custom-scroll mt-3 mb-3"
-          style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >
-          <ConstructorElement
-            type="top"
-            isLocked={false}
-            text="Краторная булка N-200i (верх)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            text="Краторная булка N-200i (верх)"
-            price={50}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
-          <ConstructorElement
-            type="bottom"
-            isLocked={false}
-            text="Краторная булка N-200i (низ)"
-            price={200}
-            thumbnail={img}
-          />
+        <div className="constructor-elements__ingredients custom-scroll">
+          {props.ingredients.map((ingredient, i) => {
+            return (
+              <div className="constructor-elements__item">
+                <DragIcon type="primary" className="mr-2" />
+                <ConstructorElement
+                  key={i}
+                  isLocked={false}
+                  text={ingredient.name}
+                  price={ingredient.price}
+                  thumbnail={ingredient.image}
+                />
+              </div>
+            );
+          })}
         </div>
-        <div
-          className="mb-10"
-          style={{ display: "flex", flexDirection: "column", gap: "10px" }}
-        >
+        <div className="constructor-elements__item  pl-6">
           <ConstructorElement
-            type="top"
+            type="bottom"
             isLocked={true}
-            text="Краторная булка N-200i (верх)"
-            price={200}
-            thumbnail={img}
+            text={bun.name}
+            price={bun.price}
+            thumbnail={bun.image}
           />
         </div>
         <div className="constructor-elements__total">
