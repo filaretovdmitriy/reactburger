@@ -5,12 +5,15 @@ import AppHeader from "./components/appheader/appheader";
 import BurgerConstructor from "./components/burgerconstructor/burgerconstructor";
 import BurgerIngredients from "./components/burgeringredients/burgeringredients";
 import Modal from "./components/modal/modal";
+import OrderDetails from "./components/orderdetails/orderdetails";
 
 function App() {
   const [state, setState] = useState({
     ingredients: null,
     loading: true,
-    showpopup: true,
+    showOrderPopup: false,
+    showIngredientPopup: false,
+    activeIngredient: null,
   });
 
   useEffect(() => {
@@ -27,12 +30,20 @@ function App() {
 
   const handleKeyPress = (event) => {
     if (event.key === "Escape") {
-      setState({ ...state, showpopup: false });
+      setState({ ...state, showOrderPopup: false });
     }
   };
 
   const handleMouseDown = () => {
-    setState({ ...state, showpopup: false });
+    setState({ ...state, showOrderPopup: false });
+  };
+
+  const showOrderModal = () => {
+    setState({ ...state, showOrderPopup: true });
+  };
+
+  const showIngredientModal = () => {
+    setState({ ...state, showIngredientPopup: true });
   };
 
   return (
@@ -40,18 +51,38 @@ function App() {
       <AppHeader />
       <main>
         {!state.loading && (
-          <BurgerConstructor ingredients={state.ingredients} />
+          <BurgerConstructor
+            ingredients={state.ingredients}
+            showIngredientModal={showIngredientModal}
+          />
         )}
         {!state.loading && (
-          <BurgerIngredients ingredients={state.ingredients} />
+          <BurgerIngredients
+            ingredients={state.ingredients}
+            showOrderModal={showOrderModal}
+            activeIngredient={state.activeIngredient}
+          />
         )}
       </main>
       <Modal
-        showpopup={state.showpopup}
-        onClose={() => setState({ ...state, showpopup: false })}
+        showpopup={state.showOrderPopup}
+        onClose={() => setState({ ...state, showOrderPopup: false })}
         handleKeyPress={handleKeyPress}
         handleMouseDown={handleMouseDown}
-      ></Modal>
+      >
+        фывфывфыв
+        <OrderDetails />
+      </Modal>
+
+      <Modal
+        showpopup={state.showIngredientPopup}
+        onClose={() => setState({ ...state, showIngredientPopup: false })}
+        handleKeyPress={handleKeyPress}
+        handleMouseDown={handleMouseDown}
+      >
+        111
+      </Modal>
+
       <div id="react-modals"></div>
     </div>
   );

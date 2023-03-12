@@ -51,8 +51,13 @@ function BurgerIngredients(props) {
             <span className="text text_type_main-medium pr-2">610</span>
             <CurrencyIcon type="primary" />
           </div>
-          <Button htmlType="button" type="primary" size="medium">
-            Нажми на меня
+          <Button
+            htmlType="button"
+            type="primary"
+            size="medium"
+            onClick={props.showOrderModal}
+          >
+            Оформить заказ
           </Button>
         </div>
       </section>

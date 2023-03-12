@@ -81,6 +81,7 @@ main {
 
 .burger-ingredients__item {
   width: 50%;
+  cursor: pointer;
 }
 
 .burger-ingredients__image {

@@ -13,7 +13,11 @@ function BurgerIngredients(props) {
     <div className="burger-ingredients__items mb-10 pl-4 pr-4">
       {ingredients.map((ingredient, i) => {
         return (
-          <div className="burger-ingredients__item pr-6 mb-8" key={i}>
+          <div
+            className="burger-ingredients__item pr-6 mb-8"
+            key={i}
+            onClick={props.showIngredientModal}
+          >
             <div className="burger-ingredients__image mb-1">
               <img src={ingredient.image} alt={ingredient.name} />
             </div>
@@ -59,21 +63,33 @@ function BurgerConstructor(props) {
           ref={(ref) => (ingredientCategoryRef.current["bun"] = ref)}
         >
           <h2>Булки</h2>
-          <BurgerIngredients ingredients={props.ingredients} type="bun" />
+          <BurgerIngredients
+            ingredients={props.ingredients}
+            type="bun"
+            showIngredientModal={props.showIngredientModal}
+          />
         </div>
         <div
           className="burger-ingredients__category mb-10"
           ref={(ref) => (ingredientCategoryRef.current["sauce"] = ref)}
         >
           <h2>Соусы</h2>
-          <BurgerIngredients ingredients={props.ingredients} type="sauce" />
+          <BurgerIngredients
+            ingredients={props.ingredients}
+            type="sauce"
+            showIngredientModal={props.showIngredientModal}
+          />
         </div>
         <div
           className="burger-ingredients__category mb-10"
           ref={(ref) => (ingredientCategoryRef.current["main"] = ref)}
         >
           <h2>Начинки</h2>
-          <BurgerIngredients ingredients={props.ingredients} type="main" />
+          <BurgerIngredients
+            ingredients={props.ingredients}
+            type="main"
+            showIngredientModal={props.showIngredientModal}
+          />
         </div>
       </div>
     </div>

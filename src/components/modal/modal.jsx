@@ -13,7 +13,7 @@ function Modal(props) {
         <div className="modal__close">
           <CloseIcon type="primary" onClick={props.onClose} />
         </div>
-        {props.child}
+        {props.children}
       </div>
       <Modaloverlay
         handleKeyPress={props.handleKeyPress}
